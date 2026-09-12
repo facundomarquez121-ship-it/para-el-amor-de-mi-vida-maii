@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canciones</title>
+
+    <link rel="stylesheet" href="rubros_paginas.css">
+
+    <style>
+        .song {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            padding: 25px 15px;
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(255,105,180,.12),
+                    transparent 45%
+                ),
+                #0d0b12;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .song::before,
+        .song::after {
+            content: "♡";
+            position: absolute;
+            color: rgba(255,105,180,.06);
+        }
+
+        .song::before {
+            top: 8%;
+            left: 8%;
+            font-size: 100px;
+            transform: rotate(-15deg);
+        }
+
+        .song::after {
+            bottom: 5%;
+            right: 8%;
+            font-size: 130px;
+            transform: rotate(15deg);
+        }
+
+        .song-card {
+            width: min(720px, 100%);
+            padding: 42px 28px;
+            text-align: center;
+            border-radius: 28px;
+            border: 1px solid rgba(255,105,180,.22);
+            background: rgba(255,255,255,.035);
+            backdrop-filter: blur(14px);
+            box-shadow:
+                0 20px 60px rgba(0,0,0,.45),
+                0 0 35px rgba(255,105,180,.06);
+            position: relative;
+            z-index: 2;
+        }
+
+        .song-card .subtitle {
+            margin-bottom: 12px;
+            color: #ff69b4;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .album {
+            width: 150px;
+            height: 150px;
+            margin: 16px auto 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 24px;
+            background: rgba(255,105,180,.035);
+            border: 1px solid rgba(255,105,180,.2);
+            box-shadow:
+                0 15px 40px rgba(0,0,0,.35),
+                0 0 25px rgba(255,105,180,.06);
+            font-size: 58px;
+        }
+
+        .heart {
+            margin: 0 0 18px;
+            color: #ff69b4;
+            font-size: 28px;
+            display: inline-block;
+            filter: drop-shadow(
+                0 0 8px rgba(255,105,180,.55)
+            );
+            animation: latido 1.5s infinite;
+        }
+
+        @keyframes latido {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            15% {
+                transform: scale(1.12);
+            }
+
+            30% {
+                transform: scale(1);
+            }
+
+            45% {
+                transform: scale(1.08);
+            }
+
+            60% {
+                transform: scale(1);
+            }
+        }
+
+        .song-card h3 {
+            margin: 0;
+            color: #fff;
+            font-size: 27px;
+            font-weight: 500;
+            letter-spacing: .5px;
+        }
+
+        .song-card > p:not(.subtitle) {
+            margin-top: 14px;
+            color: #777;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        .play {
+            width: 58px;
+            height: 58px;
+            margin-top: 24px;
+            border: 1px solid rgba(255,105,180,.35);
+            border-radius: 50%;
+            background: rgba(255,105,180,.08);
+            color: #ff69b4;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all .3s ease;
+        }
+
+        .play:hover {
+            transform: translateY(-4px) scale(1.05);
+            border-color: rgba(255,105,180,.65);
+            background: rgba(255,105,180,.14);
+            box-shadow: 0 8px 25px rgba(255,105,180,.12);
+        }
+
+        @media (max-width: 600px) {
+            .song-card {
+                padding: 35px 16px;
+                border-radius: 24px;
+            }
+
+            .song-card h3 {
+                font-size: 24px;
+            }
+
+            .album {
+                width: 130px;
+                height: 130px;
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="song">
+
+        <!-- CANCIÓN 1 -->
+        <div class="song-card">
+
+            <p class="subtitle">1 — Ama de mi sol</p>
+
+            <div class="album">🎵</div>
+
+            <h3>Esta canción me hace pensar en ti</h3>
+
+            <p>Una canción especial para nosotros.</p>
+
+            <button
+                class="play"
+                onclick="this.nextElementSibling.play()">
+                ▶
+            </button>
+
+            <audio>
+                <source
+                    src="imagenes/Milo J - Ama De Mi Sol (Visualizer).mp3"
+                    type="audio/mpeg">
+            </audio>
+
+        </div>
+
+
+        <!-- CANCIÓN 2 -->
+        <div class="song-card">
+
+            <p class="subtitle">2 — M.A.I</p>
+
+            <div class="album">🎵</div>
+
+            <h3>Esta canción me hace pensar en ti</h3>
+
+            <p>Una canción especial para nosotros.</p>
+
+            <button
+                class="play"
+                onclick="this.nextElementSibling.play()">
+                ▶
+            </button>
+
+            <audio>
+                <source
+                    src="imagenes/MILO J - M.A.I (Video Oficial).mp3"
+                    type="audio/mpeg">
+            </audio>
+
+        </div>
+
+
+        <!-- CANCIÓN 3 -->
+        <div class="song-card">
+
+            <p class="subtitle">3 — enamorado tuyo</p>
+
+            <div class="album">🎵</div>
+
+            <h3>Esta canción me hace pensar en ti</h3>
+
+            <p>Una canción especial para nosotros.</p>
+
+            <button
+                class="play"
+                onclick="this.nextElementSibling.play()">
+                ▶
+            </button>
+
+            <audio>
+                <source
+                    src="imagenes/Enamorado tuyo.mp3"
+                    type="audio/mpeg">
+            </audio>
+
+        </div>
+
+
+        <!-- CANCIÓN 4 -->
+        <div class="song-card">
+
+            <p class="subtitle">4 — A VOS</p>
+
+            <div class="album">🎵</div>
+
+            <h3>Esta canción me hace pensar en ti</h3>
+
+            <p>Una canción especial para nosotros.</p>
+
+            <button
+                class="play"
+                onclick="this.nextElementSibling.play()">
+                ▶
+            </button>
+
+            <audio>
+                <source
+                    src="imagenes/MILO J - A VOS (LETRA).mp3"
+                    type="audio/mpeg">
+            </audio>
+
+        </div>
+
+          <!-- CANCIÓN 4 -->
+        <div class="song-card">
+
+            <p class="subtitle">5 — POR TI</p>
+
+            <div class="album">🎵</div>
+
+            <h3>Esta canción me hace pensar en ti</h3>
+
+            <p>Una canción especial para nosotros.</p>
+
+            <button
+                class="play"
+                onclick="this.nextElementSibling.play()">
+                ▶
+            </button>
+
+            <audio>
+                <source
+                    src="imagenes/3AM - Por Ti (Video Oficial).mp3"
+                    type="audio/mpeg">
+            </audio>
+
+        </div>
+
+          <!-- CANCIÓN 4 -->
+        <div class="song-card">
+
+            <p class="subtitle">6 — buscarte lejos</p>
+
+            <div class="album">🎵</div>
+
+            <h3>Esta canción me hace pensar en ti</h3>
+
+            <p>Una canción especial para nosotros.</p>
+
+            <button
+                class="play"
+                onclick="this.nextElementSibling.play()">
+                ▶
+            </button>
+
+            <audio>
+                <source
+                    src="imagenes/DUKI, Bizarrap - Buscarte Lejos.mp3"
+                    type="audio/mpeg">
+            </audio>
+
+        </div>
+
+          <!-- CANCIÓN 4 -->
+        <div class="song-card">
+
+            <p class="subtitle">7 — te amo y mas</p>
+
+            <div class="album">🎵</div>
+
+            <h3>Esta canción me hace pensar en ti</h3>
+
+            <p>Una canción especial para nosotros.</p>
+
+            <button
+                class="play"
+                onclick="this.nextElementSibling.play()">
+                ▶
+            </button>
+
+            <audio>
+                <source
+                    src="imagenes/El Libro De La Vida - Te Amo Y Más (By_ Diego Luna) (Letra).mp3"
+                    type="audio/mpeg">
+            </audio>
+
+        </div>
+
+          <!-- CANCIÓN 4 -->
+        <div class="song-card">
+
+            <p class="subtitle">8 — chachacha</p>
+
+            <div class="album">🎵</div>
+
+            <h3>Esta canción me hace pensar en ti</h3>
+
+            <p>Una canción especial para nosotros.</p>
+
+            <button
+                class="play"
+                onclick="this.nextElementSibling.play()">
+                ▶
+            </button>
+
+            <audio>
+                <source
+                    src="imagenes/Josean Log - Chachachá (Lyric Video).mp3"
+                    type="audio/mpeg">
+            </audio>
+
+        </div>
+
+
+    </section>
+
+</body>
+</html>

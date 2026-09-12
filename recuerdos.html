@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuerdos</title>
+    <link rel="stylesheet" href="rubros_paginas.css">
+
+    <style>
+.memories {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px 15px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(255, 105, 180, 0.12),
+                    transparent 45%
+                ),
+                #0d0b12;
+
+            position: relative;
+            overflow: hidden;
+        }
+.memories::before {
+            content: "♡";
+
+            position: absolute;
+            top: 8%;
+            left: 8%;
+
+            font-size: 100px;
+
+            color: rgba(255, 105, 180, 0.06);
+
+            transform: rotate(-15deg);
+        }
+.memories::after {
+            content: "♡";
+
+            position: absolute;
+            bottom: 5%;
+            right: 8%;
+
+            font-size: 130px;
+
+            color: rgba(255, 105, 180, 0.06);
+
+            transform: rotate(15deg);
+        }
+.memories .container { position: relative; z-index: 2; }
+</style>
+</head>
+<body>
+  <section class="memories">
+
+    <div class="container">
+
+        <p class="subtitle">03 — Recuerdos</p>
+
+        <h2>Algunos de mis momentos favoritos.</h2>
+
+        <div class="gallery">
+
+            <div class="polaroid">
+                <img src="imagenes/favorita.jpg" alt="">
+                <p>mi foto favorita</p>
+            </div>
+
+            <div class="polaroid">
+                <img src="imagenes/dia.jpg" alt="">
+                <p>Uno de mis momentos favoritos contigo.</p>
+            </div>
+
+            <div class="polaroid">
+               <img src="imagenes/feliz.jpg" alt="">
+                <p>Una foto que siempre me hace sonreír.</p>
+            </div>
+
+            <div class="polaroid">
+               <img src="imagenes/1000000650.jpg" alt="">
+                <p>gracias por todo mi amor.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+</body>
+</html>

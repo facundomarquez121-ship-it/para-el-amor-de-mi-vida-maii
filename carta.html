@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta</title>
+    <link rel="stylesheet" href="rubros_paginas.css">
+    <style>
+        /* Fondo igual al del contador */
+        .letter {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px 15px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(255, 105, 180, 0.12),
+                    transparent 45%
+                ),
+                #0d0b12;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Corazones decorativos, igual que en el contador */
+        .letter::before {
+            content: "♡";
+            position: absolute;
+            top: 8%;
+            left: 8%;
+            font-size: 100px;
+            color: rgba(255, 105, 180, 0.06);
+            transform: rotate(-15deg);
+        }
+
+        .letter::after {
+            content: "♡";
+            position: absolute;
+            bottom: 5%;
+            right: 8%;
+            font-size: 130px;
+            color: rgba(255, 105, 180, 0.06);
+            transform: rotate(15deg);
+        }
+
+        .paper {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+   <section class="letter">
+
+    <div class="paper">
+
+        <p class="subtitle">05 — Para ti</p>
+
+        <h2>para el amor de mi vida...</h2>
+
+        <p>
+            No sé exactamente en qué momento te convertiste
+            en una parte tan importante de mi vida.
+        </p>
+
+        <p>
+            Pero sé que desde que estás conmigo hay momentos
+            que se sienten diferentes. Más bonitos. Más especiales.
+        </p>
+
+        <p>
+            me gusta todo de vos, para mis ojos y para mi sos completamente perfecta sos completamente
+            el amor de mi vida, gracias por todo lo que haces y todo lo que hiciste por mi.
+        </p>
+
+        <p>
+            gracias por hacerte siempre un tiempo para estar conmigo y por cada detalle que tenes conmigo
+            sos todo lo que esta bien en esta vida amor, sos una persona que vale oro y sos esa persona
+            tan especial que aparece solo 1 vez en la vida.
+        </p>
+
+        <p>
+            Espero que podamos seguir creando muchos recuerdos
+            juntos y el futuro es insierto pero espero que mi futuro siempre sea junto a vos.
+        </p>
+
+        <p class="signature">
+            Te amo muchisimo. ❤️
+        </p>
+
+    </div>
+
+</section>
+
+</body>
+</html>

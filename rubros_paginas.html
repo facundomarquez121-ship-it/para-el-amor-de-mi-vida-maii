@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amorcito</title>
+    <style>
+* {
+    margin: 5px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0d0b12;
+    color: #fff5f7;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ESTRELLAS */
+.stars { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+.star { position: absolute; width: 3px; height: 3px; background: #fff; border-radius: 50%; opacity: .12; box-shadow: 0 0 5px rgba(255,255,255,.7); animation: twinkle 2.8s infinite ease-in-out; }
+.star:nth-child(3n) { width: 2px; height: 2px; }
+.star:nth-child(4n) { width: 4px; height: 4px; box-shadow: 0 0 8px rgba(255,143,171,.8); }
+@keyframes twinkle { 0%,100% { opacity: .12; transform: scale(.7); } 50% { opacity: 1; transform: scale(1.6); } }
+.star-1{top:8%;left:6%;animation-delay:.2s}.star-2{top:15%;left:18%;animation-delay:1.4s}.star-3{top:25%;left:8%;animation-delay:2.1s}.star-4{top:32%;left:28%;animation-delay:.8s}.star-5{top:12%;left:42%;animation-delay:2.7s}.star-6{top:21%;left:58%;animation-delay:1.1s}.star-7{top:7%;left:76%;animation-delay:2.4s}.star-8{top:18%;left:91%;animation-delay:.5s}.star-9{top:43%;left:4%;animation-delay:1.8s}.star-10{top:55%;left:16%;animation-delay:3.1s}.star-11{top:48%;left:37%;animation-delay:.3s}.star-12{top:64%;left:67%;animation-delay:2s}.star-13{top:76%;left:9%;animation-delay:1.2s}.star-14{top:84%;left:31%;animation-delay:2.9s}.star-15{top:72%;left:52%;animation-delay:.9s}.star-16{top:88%;left:73%;animation-delay:1.7s}.star-17{top:78%;left:89%;animation-delay:3.4s}.star-18{top:38%;left:82%;animation-delay:.6s}
+
+/* GENERAL */
+
+section {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    padding: 100px 8%;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.subtitle {
+    color: #ff8fab;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: clamp(35px, 6vw, 45px);
+    margin-bottom: 50px;
+    font-family: cursive;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+/* PORTADA */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background:
+        radial-gradient(circle at center, rgba(255, 92, 137, .13), transparent 45%),
+        #0d0b12;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.heart {
+    font-size: 55px;
+    animation: heartbeat 1.8s infinite;
+    margin-bottom: 25px;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.15); }
+    30% { transform: scale(1); }
+}
+
+.hero h1 {
+    font-size: clamp(45px, 8vw, 90px);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #d8cbd0;
+}
+
+.start {
+    margin-top: 40px;
+    padding: 16px 32px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff5c87, #ff8fab);
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 10px 40px rgba(255, 92, 135, .25);
+    transition: .3s;
+}
+
+.start:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 50px rgba(255, 92, 135, .4);
+}
+
+/* COSAS */
+
+.things {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255, 105, 180, 0.12),
+            transparent 45%
+        ),
+        #0d0b12;
+    position: relative;
+    overflow: hidden;
+}
+
+.things::before {
+    content: "♡";
+    position: absolute;
+    top: 8%;
+    left: 8%;
+    font-size: 100px;
+    color: rgba(255, 105, 180, 0.06);
+    transform: rotate(-15deg);
+    pointer-events: none;
+}
+
+.things::after {
+    content: "♡";
+    position: absolute;
+    bottom: 5%;
+    right: 8%;
+    font-size: 130px;
+    color: rgba(255, 105, 180, 0.06);
+    transform: rotate(15deg);
+    pointer-events: none;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 50px;
+}
+
+.card {
+    padding: 35px 25px;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 25px;
+    background: rgba(255,255,255,.035);
+    backdrop-filter: blur(10px);
+    transition: .4s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255,143,171,.5);
+    background: rgba(255,143,171,.06);
+}
+
+.card .icon {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.card p {
+    color: #bfb1b7;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+/* CONTADOR */
+
+.counter {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(circle, rgba(255, 92, 135, .1), transparent 55%);
+}
+
+.counter-box {
+    width: 100%;
+}
+
+.counter-number {
+    font-size: clamp(55px, 12vw, 130px);
+    color: #ff8fab;
+    font-weight: 600;
+}
+
+.counter-label {
+    color: #c8b9c0;
+    font-size: 17px;
+}
+
+/* FOTOS */
+
+.memories {
+    background: #100c13;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 40px;
+}
+
+.polaroid {
+    background: #fff;
+    padding: 12px 12px 45px;
+    color: #211b1e;
+    transform: rotate(-2deg);
+    transition: .4s;
+    box-shadow: 0 20px 40px rgba(0,0,0,.4);
+}
+
+.polaroid:nth-child(even) {
+    transform: rotate(3deg);
+}
+
+.polaroid:hover {
+    transform: rotate(0) scale(1.04);
+}
+
+.polaroid img {
+    width: 100%;
+    height: 470px;
+    object-fit: cover;
+    display: block;
+}
+
+.polaroid p {
+    font-family: 'Caveat', cursive;
+    font-size: 22px;
+    padding: 14px 5px 0;
+}
+
+/* CANCION */
+
+.song {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.song-card {
+    max-width: 500px;
+    width: 100%;
+    padding: 45px 30px;
+    border-radius: 30px;
+    background: linear-gradient(145deg, #17111a, #0e0b12);
+    border: 1px solid rgba(255,255,255,.08);
+
+}
+
+.album {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 25px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #ff5c87, #722d4a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 65px;
+    box-shadow: 0 20px 50px rgba(255,92,135,.2);
+}
+
+.song-card h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.song-card p {
+    color: #aaa;
+    margin-bottom: 25px;
+}
+
+.play {
+    background: #ff6b91;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 22px;
+}
+
+/* CARTA */
+
+.letter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paper {
+    max-width: 750px;
+    background: #fff8f5;
+    color: #30262a;
+    padding: 60px;
+    border-radius: 5px;
+    box-shadow: 0 30px 80px rgba(0,0,0,.5);
+    transform: rotate(-1deg);
+}
+
+.paper h2 {
+    font-family: 'Caveat', cursive;
+    font-size: 55px;
+    margin-bottom: 30px;
+}
+
+.paper p {
+    font-family: 'Caveat', cursive;
+    font-size: 25px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 40px;
+    font-size: 30px !important;
+}
+
+/* FINAL */
+
+.final {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.final h2 {
+    margin-bottom: 15px;
+}
+
+.final p {
+    color: #aaa;
+}
+
+.final-heart {
+    font-size: 45px;
+    margin-top: 30px;
+}
+
+
+/* TARJETAS CLICKEABLES */
+a.card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.card-button {
+    border: none;
+    background: none;
+    color: inherit;
+    font: inherit;
+    font-weight: inherit;
+    padding: 0;
+    cursor: pointer;
+}
+
+
+h3 { text-align: cente;
+font-family: cursive;}
+
+.counter-box h2 {
+    font-size: 26px;
+}
+
+.counter-number {
+    font-size: 40px;
+}
+
+.counter-label {
+    font-size: 12px;
+}
+
+.subtitle {
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.counter-box p {
+    font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+
+    
+
+    
+    <section class="things" id="cosas">
+
+    <div class="container">
+
+        <div class="cards">
+
+            <a class="card" href="contador.html"><div class="icon">⌚</div><button class="card-button" type="button"><h3>contador</h3></button>
+                <p>
+                    Porque cada vez que sonríes haces que
+                    todo parezca un poquito más bonito.
+                </p></a>
+
+            <a class="card" href="cosas.html"><div class="icon">💕</div><button class="card-button" type="button"><h3>cosas quem me gustan</h3></button>
+                <p>
+                    Podría quedarme mirándolos mucho más
+                    tiempo del que probablemente debería.
+                </p></a>
+
+            <a class="card" href="carta.html"><div class="icon">💌</div><button class="card-button" type="button"><h3>carta</h3></button>
+                <p>
+                    Especialmente cuando te ríes por algo
+                    que solamente a nosotros nos causa gracia.
+                </p></a>
+
+            <a class="card" href="cancion.html"><div class="icon">💽</div><button class="card-button" type="button"><h3>cancion</h3></button>
+                <p>
+                    Porque hay momentos en los que un abrazo
+                    tuyo es exactamente lo que necesito.
+                </p></a>
+
+            <a class="card" href="recuerdos.html"><div class="icon">🧠</div><button class="card-button" type="button"><h3>recuerdos</h3></button>
+                <p>
+                    Me encanta escucharte hablar y descubrir
+                    todas esas pequeñas cosas que hacen que seas tú.
+                </p></a>
+
+            <a class="card" href="final.html"><div class="icon">✨</div><button class="card-button" type="button"><h3>final..</h3></button>
+                <p>
+                    Esas cosas que haces sin darte cuenta
+                    y que probablemente nunca sabrás cuánto significan.
+                </p></a>
+
+        </div>
+
+    </div>
+
+    <script>
+
+
+</script>
+</section>
+</body>
+
+</html>

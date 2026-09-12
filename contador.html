@@ -1,0 +1,537 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+
+    <link rel="stylesheet" href="rubros_paginas.css">
+
+    <style>
+
+        /* =========================
+           CONTADOR
+        ========================= */
+
+        .counter {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px 15px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(255, 105, 180, 0.12),
+                    transparent 45%
+                ),
+                #0d0b12;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        /* Corazones decorativos */
+
+        .counter::before {
+            content: "♡";
+
+            position: absolute;
+            top: 8%;
+            left: 8%;
+
+            font-size: 100px;
+
+            color: rgba(255, 105, 180, 0.06);
+
+            transform: rotate(-15deg);
+        }
+
+
+        .counter::after {
+            content: "♡";
+
+            position: absolute;
+            bottom: 5%;
+            right: 8%;
+
+            font-size: 130px;
+
+            color: rgba(255, 105, 180, 0.06);
+
+            transform: rotate(15deg);
+        }
+
+
+        /* =========================
+           CAJA PRINCIPAL
+        ========================= */
+
+        .counter-box {
+
+            width: min(720px, 100%);
+
+            padding: 42px 28px;
+
+            text-align: center;
+
+            border-radius: 28px;
+
+            border: 1px solid
+                rgba(255, 105, 180, 0.22);
+
+            background:
+                rgba(255, 255, 255, 0.035);
+
+            backdrop-filter: blur(14px);
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.45),
+                0 0 35px rgba(255,105,180,0.06);
+
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* =========================
+           SUBTÍTULO
+        ========================= */
+
+        .counter-box .subtitle {
+
+            margin-bottom: 12px;
+
+            color: #ff69b4;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================
+           TÍTULO
+        ========================= */
+
+        .counter-box h2 {
+
+            margin: 0;
+
+            color: #ffffff;
+
+            font-size: 27px;
+
+            font-weight: 500;
+
+            letter-spacing: 0.5px;
+        }
+
+
+        /* =========================
+           CORAZÓN
+        ========================= */
+
+        .heart {
+
+            margin: 16px 0 25px;
+
+            color: #ff69b4;
+
+            font-size: 28px;
+
+            display: inline-block;
+
+            filter:
+                drop-shadow(
+                    0 0 8px
+                    rgba(255,105,180,0.55)
+                );
+
+            animation: latido 1.5s infinite;
+        }
+
+
+        @keyframes latido {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            15% {
+                transform: scale(1.12);
+            }
+
+            30% {
+                transform: scale(1);
+            }
+
+            45% {
+                transform: scale(1.08);
+            }
+
+            60% {
+                transform: scale(1);
+            }
+        }
+
+
+        /* =========================
+           CAJITAS
+        ========================= */
+
+        .time-container {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 12px;
+
+            margin-top: 5px;
+        }
+
+
+        .time-box {
+
+            padding: 20px 8px;
+
+            border-radius: 17px;
+
+            background:
+                rgba(255, 105, 180, 0.035);
+
+            border: 1px solid
+                rgba(255, 105, 180, 0.16);
+
+            transition: all 0.3s ease;
+        }
+
+
+        .time-box:hover {
+
+            transform: translateY(-4px);
+
+            border-color:
+                rgba(255, 105, 180, 0.4);
+
+            box-shadow:
+                0 8px 25px
+                rgba(255,105,180,0.08);
+        }
+
+
+        /* =========================
+           NÚMEROS
+        ========================= */
+
+        .time-number {
+
+            display: block;
+
+            color: #ff69b4;
+
+            font-size: 34px;
+
+            font-weight: 600;
+
+            line-height: 1;
+
+            text-shadow:
+                0 0 15px
+                rgba(255,105,180,0.25);
+        }
+
+
+        /* =========================
+           PALABRAS
+        ========================= */
+
+        .time-label {
+
+            display: block;
+
+            margin-top: 9px;
+
+            color: #888;
+
+            font-size: 9px;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================
+           FRASE
+        ========================= */
+
+        .love-message {
+
+            margin-top: 28px;
+
+            color: #777;
+
+            font-size: 12px;
+
+            line-height: 1.7;
+        }
+
+
+        .love-message strong {
+
+            display: block;
+
+            margin-top: 4px;
+
+            color: #aaa;
+
+            font-size: 13px;
+
+            font-weight: 400;
+        }
+
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .counter-box {
+
+                padding: 35px 16px;
+
+                border-radius: 24px;
+            }
+
+
+            .counter-box h2 {
+
+                font-size: 24px;
+            }
+
+
+            .time-container {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 10px;
+            }
+
+
+            .time-box {
+
+                padding: 18px 8px;
+            }
+
+
+            .time-number {
+
+                font-size: 30px;
+            }
+
+
+            .time-label {
+
+                font-size: 8px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<section class="counter">
+
+    <div class="counter-box">
+
+        <p class="subtitle">
+            02 — Nuestro tiempo
+        </p>
+
+
+        <h2>
+            Juntos hace...
+        </h2>
+
+
+        <div class="heart">
+            ♥
+        </div>
+
+
+        <div class="time-container">
+
+
+            <div class="time-box">
+
+                <span
+                    class="time-number"
+                    id="days">
+                    0
+                </span>
+
+                <span class="time-label">
+                    días
+                </span>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span
+                    class="time-number"
+                    id="hours">
+                    0
+                </span>
+
+                <span class="time-label">
+                    horas
+                </span>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span
+                    class="time-number"
+                    id="minutes">
+                    0
+                </span>
+
+                <span class="time-label">
+                    minutos
+                </span>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span
+                    class="time-number"
+                    id="seconds">
+                    0
+                </span>
+
+                <span class="time-label">
+                    segundos
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="love-message">
+
+            Cada segundo contigo
+            es un segundo que quiero guardar.
+
+            <strong>
+                Y todavía me parecen pocos. ❤️
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+    /* =========================
+       FECHA DE INICIO
+       ========================= */
+
+    const fechaInicio =
+        new Date("2024-02-14T00:00:00");
+
+
+    function actualizarContador() {
+
+        const ahora = new Date();
+
+        const diferencia =
+            ahora - fechaInicio;
+
+
+        const segundosTotales =
+            Math.floor(diferencia / 1000);
+
+
+        const dias =
+            Math.floor(
+                segundosTotales / 86400
+            );
+
+
+        const horas =
+            Math.floor(
+                (segundosTotales % 86400) / 3600
+            );
+
+
+        const minutos =
+            Math.floor(
+                (segundosTotales % 3600) / 60
+            );
+
+
+        const segundos =
+            segundosTotales % 60;
+
+
+        document.getElementById("days")
+            .textContent = dias;
+
+
+        document.getElementById("hours")
+            .textContent =
+            String(horas).padStart(2, "0");
+
+
+        document.getElementById("minutes")
+            .textContent =
+            String(minutos).padStart(2, "0");
+
+
+        document.getElementById("seconds")
+            .textContent =
+            String(segundos).padStart(2, "0");
+
+    }
+
+
+    actualizarContador();
+
+    setInterval(
+        actualizarContador,
+        1000
+    );
+
+</script>
+
+
+</body>
+
+</html>
+```

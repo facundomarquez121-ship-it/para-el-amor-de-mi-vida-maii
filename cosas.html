@@ -1,0 +1,344 @@
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosas que me gustan</title>
+    <link rel="stylesheet" href="rubros_paginas.css">
+
+    <style>
+        /* =========================
+           COSAS QUE AMO
+        ========================= */
+
+        .things {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 45px 15px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(255, 105, 180, 0.12),
+                    transparent 45%
+                ),
+                #0d0b12;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Corazones decorativos */
+
+        .things::before {
+            content: "♡";
+
+            position: absolute;
+            top: 8%;
+            left: 8%;
+
+            font-size: 100px;
+
+            color: rgba(255, 105, 180, 0.06);
+
+            transform: rotate(-15deg);
+        }
+
+        .things::after {
+            content: "♡";
+
+            position: absolute;
+            bottom: 5%;
+            right: 8%;
+
+            font-size: 130px;
+
+            color: rgba(255, 105, 180, 0.06);
+
+            transform: rotate(15deg);
+        }
+
+        /* =========================
+           CAJA PRINCIPAL
+        ========================= */
+
+        .things .container {
+            width: min(900px, 100%);
+
+            padding: 42px 28px;
+
+            text-align: center;
+
+            border-radius: 28px;
+
+            border: 1px solid
+                rgba(255, 105, 180, 0.22);
+
+            background:
+                rgba(255, 255, 255, 0.035);
+
+            backdrop-filter: blur(14px);
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,0.45),
+                0 0 35px rgba(255,105,180,0.06);
+
+            position: relative;
+            z-index: 2;
+        }
+
+        /* =========================
+           SUBTÍTULO
+        ========================= */
+
+        .things .subtitle {
+            margin-bottom: 12px;
+
+            color: #ff69b4;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+        }
+
+        /* =========================
+           TÍTULO
+        ========================= */
+
+        .things h2 {
+            margin: 0 0 28px;
+
+            color: #ffffff;
+
+            font-size: 27px;
+
+            font-weight: 500;
+
+            letter-spacing: 0.5px;
+        }
+
+        /* =========================
+           TARJETAS
+        ========================= */
+
+        .things .cards {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 12px;
+
+            margin-top: 5px;
+        }
+
+        .things .card {
+            padding: 22px 15px;
+
+            border-radius: 17px;
+
+            background:
+                rgba(255, 105, 180, 0.035);
+
+            border: 1px solid
+                rgba(255, 105, 180, 0.16);
+
+            transition: all 0.3s ease;
+
+            text-align: center;
+        }
+
+        .things .card:hover {
+            transform: translateY(-4px);
+
+            border-color:
+                rgba(255, 105, 180, 0.4);
+
+            box-shadow:
+                0 8px 25px
+                rgba(255,105,180,0.08);
+        }
+
+        /* =========================
+           ICONOS
+        ========================= */
+
+        .things .icon {
+            margin-bottom: 12px;
+
+            font-size: 28px;
+
+            line-height: 1;
+
+            filter:
+                drop-shadow(
+                    0 0 8px
+                    rgba(255,105,180,0.25)
+                );
+        }
+
+        /* =========================
+           TÍTULOS DE LAS TARJETAS
+        ========================= */
+
+        .things .card h3 {
+            margin: 0 0 10px;
+
+            color: #ffffff;
+
+            font-size: 15px;
+
+            font-weight: 500;
+
+            letter-spacing: 0.3px;
+        }
+
+        /* =========================
+           TEXTOS
+        ========================= */
+
+        .things .card p {
+            margin: 0;
+
+            color: #888;
+
+            font-size: 11px;
+
+            line-height: 1.7;
+        }
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .things {
+                padding: 35px 15px;
+            }
+
+            .things .container {
+                padding: 35px 16px;
+
+                border-radius: 24px;
+            }
+
+            .things h2 {
+                font-size: 24px;
+
+                margin-bottom: 24px;
+            }
+
+            .things .cards {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 10px;
+            }
+
+            .things .card {
+                padding: 18px 10px;
+            }
+
+            .things .icon {
+                font-size: 25px;
+            }
+
+            .things .card h3 {
+                font-size: 14px;
+            }
+
+            .things .card p {
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 420px) {
+
+            .things .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+<section class="things" id="cosas">
+
+    <div class="container">
+
+        <p class="subtitle">01 — de vos me encanta</p>
+
+        <h2>Me encanta...</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">😊</div>
+                <h3>Tu sonrisa</h3>
+                <p>
+                    esa sonrisa que me llena de amor, y que siempre quiero ver para 
+                    alegrar completamente mis dias.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">👀</div>
+                <h3>Tus ojos</h3>
+                <p>
+                    esos ojos hermosos llenos de amor, y esa mirada
+                    totalmente preciosa.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">😚</div>
+                <h3>Tus besos</h3>
+                <p>
+                    esos besos que me llenan el corazon de amor, y que amo que me des
+                    si fuera por mi te daria besos todo el dia.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🫂</div>
+                <h3>Tus abrazos</h3>
+                <p>
+                   esos abrazos que amo que me des, me encantan podria
+                   estar todo el dia entre tus brazos, son muy comodos
+                   y lleno pero llenos de amor.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🧠</div>
+                <h3>Tu madurez</h3>
+                <p>
+                  tu madurez es algo completamente de admirar
+                  siempre diciendo las palabras indicadas en el momento
+                  indicado.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">✨</div>
+                <h3>Tus pequeños gestos</h3>
+                <p>
+                    esos gestos tuyos y esos detalles que te 
+                    hacen tan presente en mi vida
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>
